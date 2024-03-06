@@ -7,9 +7,9 @@ edition = "2021"
 
 [dependencies]
 ctor = "0.2.5"
-tokio = { workspace = true, features = ["sync"] }
-revm-utils = { workspace = true, optional = true }
-revm = { workspace = true, optional = true }
+tokio = { version = "1.21", features = ["sync"], default-features = false }
+revm = { git = "https://github.com/megaeth-labs/revm.git", branch = "andy/debug/make-utils-independent", features = ["std", "secp256k1"], default-features = false }
+revm-utils = { git = "https://github.com/anonymousGiga/utils.git", optional = true }
 
 [features]
 enable_opcode_metrics = [
